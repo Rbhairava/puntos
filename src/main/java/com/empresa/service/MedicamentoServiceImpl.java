@@ -24,6 +24,26 @@ public class MedicamentoServiceImpl implements MedicamentoService{
 	public List<Medicamento> listaMedicamento() {
 		return repository.findAll();
 	}
+
+	@Override
+
+	public Optional<Medicamento> buscaPorId(int idMedicamento) {
+		return repository.findById(idMedicamento);
+
+	}
+
+
+
+	@Override
+	public List<Medicamento> listaMedicamentoPorNom(String nombre) {
+	
+		return repository.findByNombre(nombre);
+	}
+
+	@Override
+	public List<Medicamento> listaMedicamentoPorStock(int stock) {
+		return repository.findByStock(stock);
+	}
 	
 
 }
